@@ -1,6 +1,17 @@
-import "../global.css";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
+import { AuthSessionProvider } from "../providers/authContext";
 
-export default function Layout() {
-  return <Slot />;
+import "../global.css";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Toast from "react-native-toast-message";
+
+export default function RootLayout() {
+  return (
+    <SafeAreaProvider>
+      <AuthSessionProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+      </AuthSessionProvider>
+      <Toast position="top" />
+    </SafeAreaProvider>
+  );
 }

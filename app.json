@@ -1,18 +1,43 @@
 {
-  "scheme": "acme",
-  "userInterfaceStyle": "automatic",
-  "orientation": "default",
-  "web": {
-    "output": "static"
-  },
-  "plugins": [
-    [
+  "expo": {
+    "scheme": "exam",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "plugins": [
       "expo-router",
-      {
-        "origin": "https://n"
-      }
-    ]
-  ],
-  "name": "exam",
-  "slug": "exam"
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Vi trenger kamera for å ta dugnadsbilder",
+          "microphonePermission": "Vi trenger mikrofon ved videoopptak",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Gi tilgang til bilder for å velge fra galleriet",
+          "cameraPermission": "Gi tilgang til kamera for å ta bilder"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Tillat posisjon for å vise nærmeste oppgaver",
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      "expo-web-browser",
+      "expo-secure-store"
+    ],
+    "web": {
+      "output": "static",
+      "bundler": "metro"
+    },
+    "name": "exam",
+    "slug": "exam",
+    "ios": {
+      "bundleIdentifier": "com.anonymous.exam"
+    }
+  }
 }
